@@ -1,16 +1,11 @@
 #Archivo Main 
-
-
+from src.functions import obtener_pizzas_estimadas
+from src.functions import obtener_temporada, obtener_pizzas_estimadas
 
 
 #Funcion Temporada
-temporada = "media" 
-match temporada: 
-    case "baja": 
-        pizzas_estimadas_mes = 1000 
-    case "media": 
-        pizzas_estimadas_mes = 1850 
-    case "alta": 
-        pizzas_estimadas_mes = 3000 
-    case _: 
-        pizzas_estimadas_mes = 1000
+
+
+temporada = obtener_temporada()
+pizzas_estimadas_mes = obtener_pizzas_estimadas(temporada)
+print(pizzas_estimadas_mes)
