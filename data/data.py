@@ -28,6 +28,14 @@ ingredientes = {
     "oregano": 12.00,         # Orégano seco molido
 }
 
+# Gastos fijos y variables
+gasto_suministros_por_pizza = 0.60
+gasto_personal_mensual = 4200
+gasto_alquiler_mensual = 1600
+iva = 0.10
+margen_beneficio = 1.35         # 35 % sobre el coste total
+kg_por_ingrediente = 0.08       # los precios son €/kg: se usan 80 g de cada ingrediente por pizza
+
 # Tipos de pizza y sus ingredientes
 pizzas = {
     # 1. Clásica básica
