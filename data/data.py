@@ -71,3 +71,8 @@ pizzas = {
     # 20. Gran carnívora
     "Carnívora_Suprema": ["harina", "tomate", "mozzarella", "jamon", "bacon", "pepperoni", "carne_picada"],
 }
+
+# Ejemplo de uso
+def mostrar_pizzas():
+    for nombre, ingredientes in pizzas.items():
+        print(f"{nombre}: {', '.join(ingredientes)}")
