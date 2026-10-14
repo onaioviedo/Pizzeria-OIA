@@ -1,6 +1,5 @@
 #Archivo Main
-from src.functions import obtener_temporada, obtener_pizzas_estimadas
-from src.carrito import mostrar_carrito
+from src.functions import obtener_temporada, obtener_pizzas_estimadas, mostrar_carrito
 from data import data
 
 temporada = obtener_temporada()
@@ -34,6 +33,15 @@ while True:
         coste_ingredientes += data.ingredientes[ingrediente] * data.kg_por_ingrediente
     coste_total = coste_ingredientes + data.gasto_suministros_por_pizza + coste_fijo_por_pizza
     precio_sin_iva = coste_total * data.margen_beneficio
+
+#gastos_fijos_mensuales = gasto_personal_mensual + gasto_alquiler_mensual
+#coste_fijo_por_pizza = gastos_fijos_mensuales / pizzas_estimadas_mes
+#coste_total_pizza = coste_ingredientes + gasto_suministros_por_pizza +
+#coste_fijo_por_pizza
+#precio_sin_iva = coste_total_pizza * 1.35
+#precio_con_iva = precio_sin_iva * (1 + iva)
+
+#TO DO - Merge con main y considerar ofertas y bebidas!!!!
 
     carrito_pizzas.append({"nombre": nombre, "precio": precio_sin_iva})
     print("\n" + mostrar_carrito(carrito_pizzas, data.iva))
