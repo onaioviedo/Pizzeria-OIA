@@ -92,3 +92,14 @@ pizzas = {
     "Carnívora_Suprema": ["harina", "tomate", "mozzarella", "jamon", "bacon", "pepperoni", "carne_picada"],
 }
 
+# Coste de compra al distribuidor/proveedor
+coste_bebidas = {
+    "agua": 0.40,
+    "cola": 0.70,
+    "limonada": 0.65,
+    "cerveza": 0.90
+}
+
+# Margen comercial aplicado a la bebida (por ejemplo, 150% de recargo sobre coste)
+margen_bebida = 1.50  # 150% de margen
+
