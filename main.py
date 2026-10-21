@@ -1,9 +1,9 @@
 #Archivo Main
-from src.functions import obtener_temporada, obtener_pizzas_estimadas, mostrar_carrito
+from src.functions import obtener_temporada, mostrar_carrito
 from data import data
 
 temporada = obtener_temporada()
-pizzas_estimadas_mes = obtener_pizzas_estimadas(temporada)
+pizzas_estimadas_mes = data.TEMPORADAS_VENTAS[temporada]
 coste_fijo_por_pizza = (data.gasto_personal_mensual + data.gasto_alquiler_mensual) / pizzas_estimadas_mes
 
 carrito_pizzas = []
