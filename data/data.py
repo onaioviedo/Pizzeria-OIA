@@ -104,3 +104,9 @@ pizzas = {
 def mostrar_pizzas():
     for nombre, ingredientes in pizzas.items():
         print(f"{nombre}: {', '.join(ingredientes)}")
+
+#Ofertas
+PIZZAS_2X1 = ["Margarita", "Pepperoni", "Hawaiana"]   # pizzas con 2x1
+DESCUENTO_MENU = 1.00                                  # € menos (sin IVA) por cada pizza + bebida
+LIMITE_DESCUENTO_VOLUMEN = 30.0                        # € (sin IVA) a partir de los cuales hay descuento
+PORCENTAJE_DESCUENTO_VOLUMEN = 0.10                    # 10 %
