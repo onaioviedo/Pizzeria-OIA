@@ -1,11 +1,5 @@
 #Base de datos
 
-#Gastos fijos
-GASTO_PERSONAL_MENSUAL = 4200.0
-GASTO_ALQUILER_MENSUAL = 1600.0
-GASTO_SUMINISTROS_POR_PIZZA = 0.60
-IVA = 0.10  # 10%
-
 #Estimación de ventas mensuales por temporada
 TEMPORADAS_VENTAS = {
     "baja": 1000,
