@@ -77,3 +77,44 @@ class OfertaVolumen(Oferta):
             base_descuento = max(0, carrito.subtotal() - descuentos_previos)
             return round(base_descuento * data.PORCENTAJE_DESCUENTO_VOLUMEN, 2)
         return 0.0
+
+
+class GestorOfertas:
+    """Muestra las ofertas, traduce la opción del menú y aplica los descuentos."""
+
+    def __init__(self):
+        self.ofertas = [Oferta2x1(), OfertaMenu(), OfertaVolumen()]
+
+    def mostrar(self):
+        print("\n--- OFERTAS ---")
+        for numero, oferta in enumerate(self.ofertas, start=1):
+            print(f"{numero}. {oferta.descripcion()}")
+        print(f"{len(self.ofertas) + 1}. Continuar sin oferta")
+
+    def opciones_validas(self):
+        return [str(numero) for numero in range(1, len(self.ofertas) + 2)]
+
+    def por_opcion(self, opcion):
+        """Devuelve la oferta del número elegido, o None para 'sin oferta'."""
+        indice = int(opcion) - 1
+        if indice < len(self.ofertas):
+            return self.ofertas[indice]
+        return None
+
+    def buscar(self, clave):
+        for oferta in self.ofertas:
+            if oferta.clave == clave:
+                return oferta
+        return None
+
+    def aplicar(self, carrito):
+        """Lista de descuentos (texto, importe) de las ofertas elegidas en el carrito."""
+        elegidas = carrito.ofertas_elegidas()
+        descuentos = []
+        for oferta in self.ofertas:
+            if oferta in elegidas:
+                previos = sum(importe for texto, importe in descuentos)
+                importe = oferta.calcular_descuento(carrito, previos)
+                if importe > 0:
+                    descuentos.append((oferta.nombre, importe))
+        return descuentos
