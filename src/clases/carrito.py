@@ -45,3 +45,26 @@ class Carrito:
             if comensal.oferta is not None and comensal.oferta not in ofertas:
                 ofertas.append(comensal.oferta)
         return ofertas
+
+    def ticket(self, iva, descuentos=None):
+        """Ticket: productos, descuentos de ofertas, base, IVA y total."""
+        if descuentos is None:
+            descuentos = []
+        output = "Productos:\n"
+        for producto in self.productos():
+            output += f"- {producto}\n"
+
+        total_descuentos = 0
+        if len(descuentos) > 0:
+            output += "\nDescuentos:\n"
+            for texto, importe in descuentos:
+                total_descuentos += importe
+                output += f"- {texto}: -{importe:.2f} €\n"
+
+        base = self.subtotal() - total_descuentos
+        importe_iva = base * iva
+        output += f"\nDescuento total: {total_descuentos:.2f} €\n"
+        output += f"\nBase imponible: {base:.2f} €\n"
+        output += f"IVA: {importe_iva:.2f} €\n"
+        output += f"Total: {base + importe_iva:.2f} €\n"
+        return output
