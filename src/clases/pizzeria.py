@@ -1,5 +1,5 @@
 from data import data
-from src.functions import obtener_temporada
+from metodo_procedural import obtener_temporada
 from src.clases.carta import Carta
 from src.clases.carrito import Carrito, Comensal
 from src.clases.ofertas import GestorOfertas
