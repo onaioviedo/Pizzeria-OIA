@@ -25,3 +25,26 @@ python main.py
 - **10%:** descuenta el 10% cuando el pedido llega a 30 €. Si se elige esta oferta y aún no se llega al mínimo, hay que añadir otro comensal para continuar.
 
 Las ofertas se pueden elegir por comensal. El resumen final muestra los descuentos que se hayan podido aplicar.
+
+## Modo con clases y objetos
+
+La versión orientada a objetos está en `src/clases/` y reutiliza los datos de `data/data.py`:
+
+- `productos.py`: `Producto`, y sus subclases `Pizza` (calcula su precio a partir de los ingredientes y los costes) y `Bebida`.
+- `carta.py`: `Carta`, crea las pizzas y bebidas y permite buscarlas por nombre.
+- `carrito.py`: `Comensal` (pizza, bebida y oferta) y `Carrito` (subtotal y ticket).
+- `ofertas.py`: clase base `Oferta` con las subclases `Oferta2x1`, `OfertaMenu` y `OfertaVolumen`, y `GestorOfertas` para mostrarlas y aplicarlas.
+- `pizzeria.py`: `Pizzeria`, calcula los costes según la temporada y toma el pedido.
+
+Para lanzarlo desde otro archivo:
+
+```python
+from src.clases.pizzeria import ejecutar
+ejecutar()
+```
+
+O directamente:
+
+```bash
+python -m src.clases.pizzeria
+```
