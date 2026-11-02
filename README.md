@@ -4,11 +4,27 @@ Aplicación sencilla de consola para tomar pedidos de pizzas y bebidas, calcular
 
 ## Cómo ejecutar
 
+Hay dos métodos que hacen lo mismo (mismo pedido, mismas ofertas, mismo ticket):
+
+- **Método 1 – procedural:** bucles y funciones (`src/metodo_procedural.py`).
+- **Método 2 – POO:** clases, objetos y herencia (`src/metodo_oop.py` y `src/clases/`).
+
 Desde la carpeta del proyecto, ejecuta:
 
-```bash
-python main.py
 ```
+python main.py                 # menú para elegir el método
+python main.py procedural      # método 1 directamente (también: python main.py 1)
+python main.py oop             # método 2 directamente (también: python main.py 2)
+```
+
+También se puede lanzar cada método por separado:
+
+```
+python -m src.metodo_procedural
+python -m src.metodo_oop
+```
+
+Requiere Python 3.10 o superior (se usa `match`) y no necesita librerías externas.
 
 ## Cómo hacer un pedido
 
@@ -38,13 +54,13 @@ La versión orientada a objetos está en `src/clases/` y reutiliza los datos de 
 
 Para lanzarlo desde otro archivo:
 
-```python
-from src.clases.pizzeria import ejecutar
-ejecutar()
+```
+from src.metodo_oop import ejecutar_metodo_2
+ejecutar_metodo_2()
 ```
 
 O directamente:
 
-```bash
-python -m src.clases.pizzeria
+```
+python -m src.metodo_oop
 ```

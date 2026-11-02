@@ -250,3 +250,6 @@ def ejecutar_metodo_1():
     print("\n--- RESUMEN FINAL ---")
     print(mostrar_carrito(carrito, data.iva, descuentos))
 
+
+if __name__ == "__main__":
+    ejecutar_metodo_1()
