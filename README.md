@@ -10,8 +10,8 @@ Antes de acceder al menú principal de la pizzería, el sistema requiere un inic
 - **Validación de Contraseña:** La clave debe cumplir estrictamente con los siguientes requisitos:
   - Mínimo de 8 caracteres.
   - Al menos una letra minúscula y una letra mayúscula.
-  - Al menos un carácter especial[cite: 8].
-- **Bucle de Reintentos y Salida:** Si los datos son incorrectos o el formato falla, el sistema permite reintentar de manera indefinida. Se puede salir del programa en cualquier momento escribiendo `exit`[cite: 8].
+  - Al menos un carácter especial.
+- **Bucle de Reintentos y Salida:** Si los datos son incorrectos o el formato falla, el sistema permite reintentar de manera indefinida. Se puede salir del programa en cualquier momento escribiendo `exit`.
 
 
 ## Cómo ejecutar
