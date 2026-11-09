@@ -2,9 +2,20 @@
 import argparse
 import sys
 
+from login import ejecutar_login  # <-- Importamos la función desde login.py
 from src.metodo_procedural import ejecutar_metodo_1
 from src.metodo_oop import ejecutar_metodo_2
 
+def main():
+    # Llama al login; se mantendrá repitiendo hasta que las credenciales sean correctas
+    ejecutar_login()
+    
+    # A partir de aquí continúa tu pizzería / programa principal
+    print("\n🍕 ¡Bienvenido al sistema principal de la Pizzería!")
+    # [Aquí puedes agregar el resto de tus menús o lógica...]
+
+if __name__ == "__main__":
+    main()
 
 def mostrar_menu():
     while True:

@@ -2,6 +2,18 @@
 
 Aplicación sencilla de consola para tomar pedidos de pizzas y bebidas, calcular el precio y aplicar ofertas.
 
+## Sistema de Autenticación (Login)
+
+Antes de acceder al menú principal de la pizzería, el sistema requiere un inicio de sesión seguro gestionado a través de `login.py`.
+
+- **Validación de Correo:** Se comprueba que el formato sea válido mediante expresiones regulares (ej. `usuario@dominio.com`).
+- **Validación de Contraseña:** La clave debe cumplir estrictamente con los siguientes requisitos:
+  - Mínimo de 8 caracteres.
+  - Al menos una letra minúscula y una letra mayúscula.
+  - Al menos un carácter especial[cite: 8].
+- **Bucle de Reintentos y Salida:** Si los datos son incorrectos o el formato falla, el sistema permite reintentar de manera indefinida. Se puede salir del programa en cualquier momento escribiendo `exit`[cite: 8].
+
+
 ## Cómo ejecutar
 
 Hay dos métodos que hacen lo mismo (mismo pedido, mismas ofertas, mismo ticket):
